@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire étudiant</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="post" action="etudiant.php">
+<h1> Connexion </h1>
+<form method="post" action="../src/bdd/connexion.php">
     <div class="form-group">
         <label for="nom">Identifiant:<br></label>
+
         <input type="text" name='identifiant' >
     </div>
-
+<p>
     <div class="form-group">
-        <p>
-            <label for="prenom">Mot de passe<br></label>
-        <p>
+       
+            <label for="prenom">Mot de passe:<br></label>
+
             <input type="text" name='motdepasse'>
     </div>
-
+    <p>
+    <button type="submit">Se connecter</button>
 </form>
 <a href="connexion.php">
 </a>
-
 
 </form>
 </body>

@@ -16,3 +16,5 @@ if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
 } else {
     echo "Identifiant ou mot de passe incorrect.";
 }
+header("Location: formulaire.html");
+echo '<td><button><a href="formulaire.html">Ajouter un étudiant</button></a></td>';

@@ -9,26 +9,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $id      = $_POST['id'];
 $nom     = $_POST['nom'];
 $prenom  = $_POST['prenom'];
-$age     = $_POST['age'];
-$Filière = $_POST['filière'];
-$moyenne = $_POST['moyenne'];
+$datenaissance = $_POST['date de naissance'];
+$pays = $_POST['pays'];
 
 $sql = "UPDATE information SET nom=?, prenom=?, age=?, Filière=?, moyenne=? WHERE id=?";
 $stmt = $bdd->prepare($sql);
-$stmt->execute([$nom, $prenom, $age, $Filière, $moyenne, $id]);
+$stmt->execute([$nom, $prenom, $age, $datenaissance, $pays]);
 
 
-header("Location: etudiant.php");
+header("Location: connexion.php");
 exit;
 }
 
 
 if (isset($_GET['id'])) {
 $id = intval($_GET['id']);
-$sql = "SELECT * FROM information WHERE id = ?";
+$sql = "SELECT * FROM auteur WHERE id = ?";
 $stmt = $bdd->prepare($sql);
 $stmt->execute([$id]);
-$etudiant = $stmt->fetch();
+$auteur = $stmt->fetch();
 }
 ?>
 
@@ -38,15 +37,15 @@ $etudiant = $stmt->fetch();
     <title>Modifier étudiant</title>
 </head>
 <body>
-<h2>Modifier étudiant</h2>
+<h2>Modification auteur</h2>
 <form method="post" action="modifier.php">
-    <input type="hidden" name="id" value="<?php echo $etudiant['id']; ?>">
+    <input type="hidden" name="id" value="<?php echo $auteur['id']; ?>">
 
-    Nom: <input type="text" name="nom" value="<?php echo $etudiant['nom']; ?>"><br>
-    Prénom: <input type="text" name="prenom" value="<?php echo $etudiant['prenom']; ?>"><br>
-    Âge: <input type="number" name="age" value="<?php echo $etudiant['age']; ?>"><br>
-    Filière: <input type="text" name="filiere" value="<?php echo $etudiant['Filière']; ?>"><br>
-    Moyenne: <input type="text" name="moyenne" value="<?php echo $etudiant['moyenne']; ?>"><br>
+    Nom: <input type="text" name="nom" value="<?php echo $auteur['nom']; ?>"><br>
+    Prénom: <input type="text" name="prenom" value="<?php echo $auteur['prenom']; ?>"><br>
+    Date de naissance: <input type="number" name="age" value="<?php echo $auteur['date de naissance']; ?>"><br>
+    Pays: <input type="text" name="filiere" value="<?php echo $auteur['pays']; ?>"><br>
+
 
     <input type="submit" value="Enregistrer">
 </form>

@@ -1,20 +1,22 @@
 <?php
-try{
-$bdd = new PDO('mysql:host=localhost;dbname=joe', 'joe',  'lovebooks');
-}catch(PDOException $e) {
-    echo "Erreur:" . $e->getMessage();
-}
-// pour recupérer les infos de l'utilisateur
-$log = $pdo->prepare("SELECT * FROM inscrit WHERE identifiant = :identifiant");
-$log->execute(['identifiant' => $identifiant]);
-$user = $log->fetch();
+session_start();
 
-if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
-    // pour si la connexion est resussi réussie
-    $_SESSION['user_id'] = $user['id'];
-    echo "Bienvenue " . $user['identifiant'];
-} else {
-    echo "Identifiant ou mot de passe incorrect.";
+// Vérifie si on veut se connecter
+if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe'])) {
+    $identifiant = $_POST['identifiant'];
+    $mot_de_passe = $_POST['mot_de_passe'];
+
+    $stmt = $pdo->prepare("SELECT * FROM inscrit WHERE login = :identifiant");
+    $stmt->execute(['identifiant' => $identifiant]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['identifiant'] = $user['login'];
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Identifiant ou mot de passe incorrect.";
+    }
+    header("Location: formulaire.html");
 }
-header("Location: formulaire.html");
-echo '<td><button><a href="formulaire.html">Ajouter un étudiant</button></a></td>';

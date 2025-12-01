@@ -7,25 +7,24 @@
 </head>
 <body>
 <h1> Connexion </h1>
-<form method="post" action="../src/bdd/connexion.php">
-    <div class="form-group">
-        <label for="nom">Identifiant:<br></label>
+<form action="connexion.php" method="POST">
+    <input type="hidden" name="ajouter" value="1">
 
-        <input type="text" name='identifiant' >
-    </div>
-<p>
-    <div class="form-group">
-       
-            <label for="prenom">Mot de passe:<br></label>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required><br>
 
-            <input type="text" name='motdepasse'>
-    </div>
-    <p>
-    <button type="submit">Se connecter</button>
-</form>
-<a href="connexion.php">
-</a>
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom"><br>
 
+    <label for="date_naissance">Date de naissance :</label>
+    <input type="date" id="date_naissance" name="date_naissance"><br>
+
+    <label for="pays">Pays :</label>
+    <input type="text" id="pays" name="pays"><br>
+
+    <button type="submit">Ajouter</button>
+    <a href="connexion.php">
+    </a>
 </form>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+require_once('../bdd/bdd.php');
 session_start();
 
 // Vérifie si on veut se connecter

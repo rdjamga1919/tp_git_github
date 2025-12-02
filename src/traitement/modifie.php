@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datenaissance = $_POST['date de naissance'];
     $pays = $_POST['pays'];
 
-    $sql = "UPDATE information SET nom=?, prenom=?, date_naissance, pays=? WHERE id=?";
+    $sql = "UPDATE information SET :nom, :prenom, :date_naissance, :pays WHERE id=?";
     $stmt = $bdd->prepare($sql);
-    $stmt->execute([$nom, $prenom, $age, $datenaissance, $pays]);
+    $stmt->execute([$nom, $prenom, $datenaissance, $pays]);
 
 
     header("Location: formmodification.html");

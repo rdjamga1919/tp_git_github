@@ -6,7 +6,7 @@ try {
     echo "Erreur: " . $e->getMessage();
 }
 session_start();
-if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe'])) {
+if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
     $identifiant = $_POST['identifiant'];
     $mot_de_passe = $_POST['mot_de_passe'];
 
@@ -16,7 +16,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe'])) {
 
     if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
         // Connexion réussie
-        $_SESSION['user_id'] = $user['id_inscrit'];
+        $_SESSION['id'] = $user['id_inscrit'];
         $_SESSION['identifiant'] = $user['identifiant'];
 
 

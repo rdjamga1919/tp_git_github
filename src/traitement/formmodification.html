@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de modification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Modification des informations</h1>
+<form action="connexion.php" method="POST">
+    <input type="hidden" name="ajouter" value="1">
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required><br>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom"><br>
+
+    <label for="date_naissance">Date de naissance :</label>
+    <input type="date" id="date_naissance" name="date_naissance"><br>
+<p>
+    <label for="pays">Pays :</label>
+    <input type="text" id="pays" name="pays"><br>
+
+    <button type="submit">Ajouter</button>
+    <a href="modifie.php">
+    </a>
+</form>
+</body>
+</html>

@@ -3,7 +3,6 @@ global $pdo;
 require_once('../bdd/bdd.php');
 session_start();
 
-// Vérifie si on veut se connecter
 if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe'])) {
     $identifiant = $_POST['identifiant'];
     $mot_de_passe = $_POST['mot_de_passe'];

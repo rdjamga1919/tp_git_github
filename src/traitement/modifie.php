@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modifier étudiant</title>
+    <title>Modifier</title>
 </head>
 <body>
 <h2>Modification auteur</h2>

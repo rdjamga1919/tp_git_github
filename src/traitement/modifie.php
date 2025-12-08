@@ -73,6 +73,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title><?= $auteur ? "Modifier un auteur" : "modifier un auteur" ?></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1><?= $auteur ? "Modifier un auteur" : "modifier un auteur" ?></h1>

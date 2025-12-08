@@ -46,7 +46,8 @@ try {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter un auteur</title>
+  <title>Ajouter un auteur</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Ajouter un nouvel auteur</h1>

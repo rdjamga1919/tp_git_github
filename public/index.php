@@ -1,9 +1,10 @@
 <?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Page index</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
@@ -11,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">MaVitrine</a>
+        <a class="navbar-brand" href="#">Ma Librairie</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,6 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="produit.php">Produit</a></li>
             </ul>
@@ -60,21 +60,12 @@
     </div>
 </section>
 
-<section id="temoignages">
-    <h2 class="text-center">Ils nous font confiance</h2>
-    <?php
-    $temoignages = [
-        ["Service impeccable et rapide !", "Marie"],
-        ["Une équipe à l’écoute.", "Lucas"],
-        ["Des solutions modernes.", "Camille"]
-    ];
-    foreach ($temoignages as $t) {
-        echo '<div>
-                <blockquote>“'.$t[0].'”</blockquote>
-                <footer>'.$t[1].'</footer>
-              </div>';
-    }
-    ?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">A propos de nous</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
 </section>
 
 </body>

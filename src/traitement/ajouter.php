@@ -2,26 +2,26 @@
 try {
     // ⚠️ adapte host, dbname, user, password à ta configuration
     $pdo = new PDO("mysql:host=localhost;dbname=joe;charset=utf8", "joe", "lovebooks");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);{}
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $titre  = $_POST['titre'] ?? '';
-        $auteur = $_POST['auteur'] ?? '';
-        $annee  = $_POST['annee'] ?? null;
-        $genre  = $_POST['genre'] ?? '';
-
-        $stmt = $pdo->prepare("INSERT INTO livres (titre, auteur, annee, genre) 
+        $titre = $_POST['titre'];
+        $auteur = $_POST['auteur'];
+        $annee = $_POST['annee'];
+        $genre = $_POST['genre'];
+    }
+    $stmt = $pdo->prepare("INSERT INTO livres (titre, auteur, annee, genre) 
                                VALUES (:titre, :auteur, :annee, :genre)");
-        $stmt->execute([
-            'titre'  => $titre,
-            'auteur' => $auteur,
-            'annee'  => $annee,
-            'genre'  => $genre
-        ]);
+    $stmt->execute([
+        'titre' => $titre,
+        'auteur' => $auteur,
+        'annee' => $annee,
+        'genre' => $genre
+    ]);
 
-        // ✅ Redirection vers index.php après succès
-        header("Location: index.php?ajout=success");
-        exit();
+    // ✅ Redirection vers index.php après succès
+    header("Location: index.php?ajout=success");
+    exit();
 
         ?>
 <!DOCTYPE html>

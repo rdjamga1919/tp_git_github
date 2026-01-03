@@ -6,7 +6,6 @@ if (!isset($_GET['id'])) {
     header('location: listeLivre.php');
     exit();
 }
-
 $id_livre = $_GET['id'];
 
 $sql = $pdo->prepare("SELECT l.*, e.ref_auteur 
@@ -15,33 +14,11 @@ $sql = $pdo->prepare("SELECT l.*, e.ref_auteur
                        WHERE l.id_livre = :id");
 $sql->execute(['id' => $id_livre]);
 $livre = $sql->fetch(PDO::FETCH_ASSOC);
-
 if (!$livre) {
     header('location: listeLivre.php');
     exit();
-}
-    // permet de preremplir le formulaire de modif du livre avec les  données de la bdd
+} // permet de preremplir le formulaire de modif du livre avec les  données de la bdd
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_livre = $_POST['id_livre'];
-    $titre = $_POST['titre'];
-    $annee = $_POST['annee'];
-    $resume = $_POST['resume'];
-    $id_auteur = $_POST['id_auteur'];
-
-    try {
-        $sql = $pdo->prepare("UPDATE livre SET titre = :titre, annee = :annee, resume = :resume WHERE id_livre = :id");
-        $sql->execute(['titre' => $titre, 'annee' => $annee, 'resume' => $resume, 'id' => $id_livre]);
-
-        $stmt = $pdo->prepare("UPDATE ecrire SET ref_auteur = :ref_auteur WHERE ref_livre = :ref_livre");
-        $stmt->execute(['ref_auteur' => $id_auteur, 'ref_livre' => $id_livre]);
-
-        header('location: listeLivre.php');
-        exit();
-    } catch (PDOException $e) {
-        $erreur = "erreur : " . $e->getMessage();
-    }
-}
 $auteurs = $pdo->query("SELECT id_auteur, nom, prenom FROM auteur ORDER BY nom")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -56,11 +33,13 @@ $auteurs = $pdo->query("SELECT id_auteur, nom, prenom FROM auteur ORDER BY nom")
 <div class="container mt-5">
     <h1>Modifier le livre</h1>
 
-    <?php if (isset($erreur)): ?>
-        <div class="alert alert-danger"><?= $erreur ?></div>
+    <?php if (isset($_GET['error'])): ?>
+        <div class="alert alert-danger">
+            Une erruer est survenue lors de la modification du livre.
+        </div>
     <?php endif; ?>
 
-    <form method="POST" action="modifierLivre.php">
+    <form method="POST" action="../../src/traitement/livres/modifier.php">
         <input type="hidden" name="id_livre" value="<?= htmlspecialchars($livre['id_livre']) ?>">
 
         <div class="mb-3">

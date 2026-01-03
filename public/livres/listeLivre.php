@@ -83,12 +83,13 @@ $livres = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetch important car renvoi un ta
                     <td><?= htmlspecialchars($livre['annee']) ?></td>
                     <td><?= htmlspecialchars($livre['nom'] . ' ' . $livre['prenom']) ?></td>
                     <td>
-                        <form action="supprimerLivres.php" method="POST">
-                            <input type="hidden" name="id_livre" value="<?= htmlspecialchars($livre['id_livre']) ?>"> <!le htmlspecialchars id_livre permet de preciser quel livre suppirmer de la bdd par son id de maniere + securisé!>
+                        <form action="../../src/traitement/livres/supprimer.php" method="POST">
+                            <input type="hidden" name="id_livre" value="<?= htmlspecialchars($livre['id_livre']) ?>"> <!le htmlspecialchars ($livre[id_livre) permet de preciser quel livre suppirmer de la bdd par son id de maniere + securisé!>
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Supprimer ce livre ?')">Supprimer</button> <!"onclick" js pour le bouton de confirmation, tester sans pour voir si pas trop brutal!>
                         </form>
 
                         <a href="modifierLivre.php?id=<?= $livre['id_livre'] ?>" class="btn btn-warning btn-sm">Modifier</a>
+
                     </td>
 
                 </tr>

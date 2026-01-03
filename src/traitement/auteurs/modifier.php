@@ -4,7 +4,7 @@ try {
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Erreur: " . $e->getMessage();
-}s
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $id      = $_POST['id'];
 $nom     = $_POST['nom'];

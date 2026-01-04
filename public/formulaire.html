@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire étudiant</title>
+    <title>Formulaire de modification</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1> Connexion </h1>
-<form action="../src/traitement/connexion.php" method="POST">
-    <input type="hidden" name="ajouter" value="1">
-
-    <label for="identifiant">Identifiant:</label>
-    <input type="text" id="identifiant" name="identifiant" required><br>
-
-    <label for="mot de passe">Mot de passe:</label>
-    <input type="password" id="mot de passe" name="mot de passe"><br>
-
-    <button type="submit">Se connecter</button>
-    <a href="../src/traitement/connexion.php">
-    </a>
+<h1>Modification des informations</h1>
+<form action="connexion.php" method="POST">
+<h2 class="display-5 fw-bold">🔐 Connexion</h2>
+<p class="text-muted">Accédez à votre bibliothèque personnelle</p>
+</div>
+<form>
+    <div class="mb-4">
+        <label for="loginEmail" class="form-label fw-bold">Email</label>
+        <input type="email" class="form-control form-control-lg" id="loginEmail" placeholder="votre@email.com" required>
+    </div>
+    <div class="mb-4">
+        <label for="loginPassword" class="form-label fw-bold">Mot de passe</label>
+        <input type="password" class="form-control form-control-lg" id="loginPassword" placeholder="••••••••" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3 rounded-pill">Se connecter</button>
+    <a href="#accueil" class="btn btn-outline-secondary btn-lg w-100 rounded-pill">Retour</a>
 </form>
-</body>
-</html>
+</div>

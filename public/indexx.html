@@ -1,141 +1,349 @@
 <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaBibliothèque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
+<!-- NAVBAR MODERNE -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fs-3 fw-bold" href="#">📚 MaBibliothèque</a>
 
-   class="navbar-brand" href="#">MaBibliothèque</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuBurger">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+        <div class="collapse navbar-collapse" id="menuBurger">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="produit.html">Produit</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#accueil">🏠 Accueil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#connexion">🔑 Connexion</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#meslivres">📖 Mes livres</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">📚 Livres</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#ajouter-livre">➕ Ajouter</a></li>
+                        <li><a class="dropdown-item" href="#modifier-livre">✏️ Modifier</a></li>
+                        <li><a class="dropdown-item" href="#supprimer-livre">🗑️ Supprimer</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">✍️ Auteurs</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#ajouter-auteur">➕ Ajouter</a></li>
+                        <li><a class="dropdown-item" href="#modifier-auteur">✏️ Modifier</a></li>
+                        <li><a class="dropdown-item" href="#supprimer-auteur">🗑️ Supprimer</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<section id="accueil">
-    <div>
-        <div class="p-3 mb-2 bg-primary text-white">
 
-            <h1><p class="text-center">Bienvenue sur notre site</p></h1>
-
-            <p class="text-center">Des services modernes, rapides et efficaces.</p>
-
-            <p class="text-center"> <button type="button" class="btn btn-light"> Voir nos services </button> </p> </div >
-
+<!-- HERO SECTION -->
+<div id="accueil" class="bg-white py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-3 fw-bold mb-4">📚 Bienvenue sur MaBibliothèque</h1>
+        <p class="lead fs-4 mb-4">Votre bibliothèque personnelle en ligne</p>
+        <p class="fs-5 mb-5">Gérez vos livres, vos auteurs favoris et vos réservations en toute simplicité</p>
+        <a href="#services" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow">Découvrir nos services</a>
     </div>
-</section>
+</div>
 
-<section id="services" class="container my-5">
-    <h2 class="text-center mb-4">Nos services</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Réservation de livres</h5>
-                    <p class="card-text">Ajouter, supprimer ou modifier</p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-
-                <div class="card-body">
-                    <h5 class="card-title">Service 2</h5>
-                    <p class="card-text">Description brève du service 2.</p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-
-                <div class="card-body">
-                    <h5 class="card-title">Service 3</h5>
-                    <p class="card-text">Description brève du service 3.</p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="temoignages" class="bg-light py-5">
+<!-- SERVICES SECTION -->
+<section id="services" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Ils nous font confiance</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <blockquote class="blockquote text-center">
-                    <p class="mb-0">“Service impeccable et rapide !”</p>
-                    <footer class="blockquote-footer mt-2">Marie</footer>
-                </blockquote>
+        <h2 class="text-center display-5 fw-bold mb-5">Nos Services</h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-5">
+                        <div class="display-1 mb-4">📖</div>
+                        <h5 class="card-title fs-3 fw-bold mb-3">Réserver un livre</h5>
+                        <p class="card-text text-muted mb-4">Consultez et réservez vos ouvrages préférés en quelques clics</p>
+                        <a href="#connexion" class="btn btn-primary btn-lg rounded-pill">Accéder</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <blockquote class="blockquote text-center">
-                    <p class="mb-0">“Une équipe à l’écoute.”</p>
-                    <footer class="blockquote-footer mt-2">Lucas</footer>
-                </blockquote>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-5">
+                        <div class="display-1 mb-4">📚</div>
+                        <h5 class="card-title fs-3 fw-bold mb-3">Gérer les livres</h5>
+                        <p class="card-text text-muted mb-4">Ajoutez, modifiez ou supprimez vos livres facilement</p>
+                        <a href="#connexion" class="btn btn-primary btn-lg rounded-pill">Accéder</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <blockquote class="blockquote text-center">
-                    <p class="mb-0">“Des solutions modernes.”</p>
-                    <footer class="blockquote-footer mt-2">Camille</footer>
-                </blockquote>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 text-center">
+                    <div class="card-body p-5">
+                        <div class="display-1 mb-4">✍️</div>
+                        <h5 class="card-title fs-3 fw-bold mb-3">Gérer les auteurs</h5>
+                        <p class="card-text text-muted mb-4">Organisez votre collection par auteurs favoris</p>
+                        <a href="#connexion" class="btn btn-primary btn-lg rounded-pill">Accéder</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section id="contact" style="max-width:640px; margin:0 auto; text-align:center;">
-    <h2>Contactez-nous</h2>
 
-    <form style="display:inline-block; text-align:left; width:100%;">
-        <div>
-            <label for="nom">Nom</label><br>
-            <input type="text" id="nom" placeholder="Votre nom" size="77">
+<!-- FEATURES SECTION -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="display-5 fw-bold mb-4">Pourquoi MaBibliothèque ?</h2>
+                <ul class="list-unstyled fs-5">
+                    <li class="mb-3">✅ Interface simple et intuitive</li>
+                    <li class="mb-3">✅ Accès rapide à vos livres</li>
+                    <li class="mb-3">✅ Gestion complète de votre collection</li>
+                    <li class="mb-3">✅ Disponible partout, tout le temps</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-primary text-white p-5 rounded shadow text-center">
+                    <h3 class="display-1 mb-3">1000+</h3>
+                    <p class="fs-4">Livres disponibles</p>
+                </div>
+            </div>
         </div>
-        <br>
-        <div>
-            <label for="email">Email</label><br>
-            <input type="email" id="email" placeholder="exemple@mail.com" size="77">
-        </div>
-        <br>
-        <div>
-            <label for="message">Message</label><br>
-            <textarea id="message" cols="80" placeholder="Votre message"></textarea>
-        </div>
-        <br>
-        <button type="button" class="btn btn-success">Envoyer</button>
-    </form>
+    </div>
 </section>
-<br>
-<footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-        <p class="mb-2">
-            <a class="navbar-brand text-white" href="#">© 2025 – Rosie Djamga & Anaïs Kriegel--Grapain – Tous droits réservés</a>
-        </p>
-        <div>
-            <a href="#" class="text-white me-3">
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-            </svg>
-            <a href="#" class="text-white me-3">
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-            </svg>
-            <a href="#" class="text-white me-3">
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-            </svg>
+
+<!-- PAGE CONNEXION -->
+<section id="connexion" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="display-5 fw-bold">🔐 Connexion</h2>
+                            <p class="text-muted">Accédez à votre bibliothèque personnelle</p>
+                        </div>
+                        <form>
+                            <div class="mb-4">
+                                <label for="loginEmail" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control form-control-lg" id="loginEmail" placeholder="votre@email.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="loginPassword" class="form-label fw-bold">Mot de passe</label>
+                                <input type="password" class="form-control form-control-lg" id="loginPassword" placeholder="••••••••" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3 rounded-pill">Se connecter</button>
+                            <a href="#accueil" class="btn btn-outline-secondary btn-lg w-100 rounded-pill">Retour</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
+
+<!-- PAGE MES LIVRES -->
+<section id="meslivres" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold">📚 Mes Livres Réservés</h2>
+            <p class="text-muted fs-5">Gérez votre collection personnelle</p>
+        </div>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white py-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0 fs-4">Ma collection</h3>
+                    <a href="#ajouter-livre" class="btn btn-light rounded-pill">➕ Ajouter un livre</a>
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <!-- Exemple de livre -->
+                <div class="card mb-3 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div class="mb-2">
+                                <h5 class="fw-bold mb-2">Le Petit Prince</h5>
+                                <p class="text-muted mb-1">Antoine de Saint-Exupéry</p>
+                                <small class="text-muted">Réservé le 15/12/2024</small>
+                            </div>
+                            <div>
+                                <a href="#modifier-livre" class="btn btn-sm btn-outline-primary rounded-pill me-2 mb-1">Modifier</a>
+                                <a href="#supprimer-livre" class="btn btn-sm btn-outline-danger rounded-pill mb-1">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemple de livre 2 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div class="mb-2">
+                                <h5 class="fw-bold mb-2">1984</h5>
+                                <p class="text-muted mb-1">George Orwell</p>
+                                <small class="text-muted">Réservé le 20/12/2024</small>
+                            </div>
+                            <div>
+                                <a href="#modifier-livre" class="btn btn-sm btn-outline-primary rounded-pill me-2 mb-1">Modifier</a>
+                                <a href="#supprimer-livre" class="btn btn-sm btn-outline-danger rounded-pill mb-1">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#accueil" class="btn btn-outline-secondary btn-lg rounded-pill px-5">← Retour à l'accueil</a>
+        </div>
+    </div>
+</section>
+
+<!-- PAGE AJOUTER UN LIVRE -->
+<section id="ajouter-livre" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h2 class="mb-0 fs-4">📖 Ajouter un livre</h2>
+                    </div>
+                    <div class="card-body p-5">
+                        <form>
+                            <div class="mb-4">
+                                <label for="titreLivre" class="form-label fw-bold">Titre du livre</label>
+                                <input type="text" class="form-control form-control-lg" id="titreLivre" placeholder="Ex: Le Petit Prince" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="auteurLivre" class="form-label fw-bold">Auteur</label>
+                                <input type="text" class="form-control form-control-lg" id="auteurLivre" placeholder="Ex: Antoine de Saint-Exupéry" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="dateLivre" class="form-label fw-bold">Date de réservation</label>
+                                <input type="date" class="form-control form-control-lg" id="dateLivre" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill mb-3">💾 Sauvegarder</button>
+                            <a href="#meslivres" class="btn btn-outline-secondary btn-lg w-100 rounded-pill">Annuler</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PAGE MES AUTEURS -->
+<section id="mesauteurs" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold">✍️ Mes Auteurs Favoris</h2>
+            <p class="text-muted fs-5">Découvrez vos auteurs préférés</p>
+        </div>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-success text-white py-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0 fs-4">Liste de mes auteurs</h3>
+                    <a href="#ajouter-auteur" class="btn btn-light rounded-pill">➕ Ajouter un auteur</a>
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <!-- Exemple d'auteur -->
+                <div class="card mb-3 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div class="mb-2">
+                                <h5 class="fw-bold mb-2">Victor Hugo</h5>
+                                <p class="text-muted mb-1">Français</p>
+                                <small class="text-muted">Roman, Poésie</small>
+                            </div>
+                            <div>
+                                <a href="#modifier-auteur" class="btn btn-sm btn-outline-success rounded-pill me-2 mb-1">Modifier</a>
+                                <a href="#supprimer-auteur" class="btn btn-sm btn-outline-danger rounded-pill mb-1">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemple d'auteur 2 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                            <div class="mb-2">
+                                <h5 class="fw-bold mb-2">Agatha Christie</h5>
+                                <p class="text-muted mb-1">Britannique</p>
+                                <small class="text-muted">Roman policier</small>
+                            </div>
+                            <div>
+                                <a href="#modifier-auteur" class="btn btn-sm btn-outline-success rounded-pill me-2 mb-1">Modifier</a>
+                                <a href="#supprimer-auteur" class="btn btn-sm btn-outline-danger rounded-pill mb-1">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#accueil" class="btn btn-outline-secondary btn-lg rounded-pill px-5">← Retour à l'accueil</a>
+        </div>
+    </div>
+</section>
+
+<!-- PAGE AJOUTER UN AUTEUR -->
+<section id="ajouter-auteur" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-success text-white py-3">
+                        <h2 class="mb-0 fs-4">✍️ Ajouter un auteur</h2>
+                    </div>
+                    <div class="card-body p-5">
+                        <form>
+                            <div class="mb-4">
+                                <label for="nomAuteur" class="form-label fw-bold">Nom de l'auteur</label>
+                                <input type="text" class="form-control form-control-lg" id="nomAuteur" placeholder="Ex: Victor Hugo" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="nationaliteAuteur" class="form-label fw-bold">Nationalité</label>
+                                <input type="text" class="form-control form-control-lg" id="nationaliteAuteur" placeholder="Ex: Français">
+                            </div>
+                            <div class="mb-4">
+                                <label for="genreAuteur" class="form-label fw-bold">Genre littéraire</label>
+                                <input type="text" class="form-control form-control-lg" id="genreAuteur" placeholder="Ex: Roman, Poésie...">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg w-100 rounded-pill mb-3">💾 Sauvegarder</button>
+                            <a href="#mesauteurs" class="btn btn-outline-secondary btn-lg w-100 rounded-pill">Annuler</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-2 fs-5">© 2025 – Tous droits réservés Rosie Djmaga - Anaïs Kriegel--Grapain</p>
+
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
